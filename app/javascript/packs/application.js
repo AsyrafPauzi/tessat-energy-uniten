@@ -6,7 +6,6 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-import '../stylesheets/application'
 var jQuery = require("jquery")
 // import jQuery from "jquery";
 global.$ = global.jQuery = jQuery;
