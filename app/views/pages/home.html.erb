@@ -1,0 +1,41 @@
+<div class="row my-5">
+    <div class="col-md-1 ">
+    </div>
+    <div class="col-md-3 ">
+        <div class="card">
+            <%= image_tag  "gambar-receiver.jpg", class:"img-fluid"  %>
+        </div>
+        <br />
+        <div class="card">
+            <%= image_tag  "gambar-receiver.jpg", class:"img-fluid"  %>
+        </div>
+        <br />
+        <div class="card">
+            <%= image_tag  "gambar-receiver.jpg", class:"img-fluid"  %>
+        </div>
+    </div>
+    <div class="col-md-7">
+        <div class="text-center my-2">
+            <%= video_tag "home-video.mp4", :controls => true, :class => "home-video"%>
+        </div>
+
+        <div class="card">
+            <p class="m-3">Satellite receiver with radome located at Pusat Angkasa Malaysia in Banting Selangor.
+                The receiver can receive signals from a constellation of NASA satellites namely Suomi-NPP,
+                AQUA, TERRA and JSS. Data from the satellites are ingested and archived for usage.
+                The temporal resolution varies from 6 to 8 times per day and the highest spatial resolution is 250m.</p>
+            <p class="m-3">The raw data acquired will be processed to produce maps according to different application.
+                IPOPP used computer language to transform data to fulfill the application requirements.</p>
+            <div class="m-3 row d-flex justify-content-center">
+                <div class="col-md-6 align-self-center"">
+                <%= image_tag('data-dark.gif', draggable: "true", class:"img-fluid") %>
+            </div>
+            <div class=" col-md-6 align-self-center"">
+                    <%= image_tag('data-light.gif', draggable: "true", class:"img-fluid") %>
+                </div>
+            </div>
+
+        </div>
+        <br />
+    </div>
+</div>

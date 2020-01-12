@@ -1,0 +1,51 @@
+<div class="row my-5">
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-10 card">
+        <div class="row">
+            <div class="col-md-4 card">
+                <div class="card-body">
+                    <h2 class="text-center">Map Data Access </h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Data List :</label>
+                            <select class="form-control" id="exampleFormControlSelect1">
+                                <option>Cloud free vegetation</option>
+                                <option>Vegetation Changes</option>
+                                <option>Land cover map</option>
+                                <option>Land Surface Temperature</option>
+                                <option>Chlorophyll-a</option>
+                                <option>Night time light data</option>
+                                <option>Haze trajectory</option>
+                                <option>Seasonal rainfall data</option>
+                                <option>Emergency data – Fire</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Date :</label>
+                            <div class="input-group date" data-provide="datepicker">
+                                <input type="text" class="form-control">
+                                <div class="input-group-addon">
+                                    <span class="glyphicon glyphicon-th"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                    </form>
+                    <hr>
+                    <p>VIIRS Sea Surface Temperature (SST)<p>
+                    <span>Sea Surface Temperature (SST) is a measure of the energy due to the motion of molecules at the top layer of the ocean. 
+                    Depending on the sensor, spaceborne measurements give us an unprecedented global measurement of sea surface temperatures every 
+                    few days to a week. Temperatures are measured from approximately 10 µm below the surface (infrared bands) to 1mm 
+                    (microwave bands) depths using radiometers. SST is an important input for regional and global climate analysis and weather modeling.
+                     Coverage is limited by orbital pass and cloud cover. Resolution is 1km at nadir. <span>
+                </div>
+            </div>
+            <div class="col-md-8">
+                 <%= image_tag 'https://via.placeholder.com/1000x800', class: "m-3" %>
+            </div>
+        </div>
+    </div>
+
+</div>
