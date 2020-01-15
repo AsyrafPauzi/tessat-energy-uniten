@@ -61,3 +61,24 @@ body {
 .about-us-image-person {
   max-width: 100%;
 }
+
+canvas { display:block; margin:1em auto; background:#fff; border:1px solid #ccc;}
+.buttons {
+  position: absolute;
+  float: left;
+  top: 8px;
+  button {
+    padding: 7px;
+    margin-bottom: 5px;
+    background-color: #444;
+    color: #fff;
+    border-style: none;
+    border: 1px solid #000;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  i {
+    font-size: 1.5em;
+  }
+}
