@@ -1,0 +1,163 @@
+<!-- Main content -->
+<section class="content mt-2">
+    <!-- Default box -->
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Listing Data Request</h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm-12 table-responsive">
+                    <table id="example" class="table table-bordered table-striped no-footer dataTable" role="grid"
+                        aria-describedby="example1_info" style="width:100%;">
+                        <thead>
+                            <tr role="row">
+                                <th>Request Time</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Request Data</th>
+                                <th>status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>21/1/2020</td>
+                                <td>Abu</td>
+                                <td>Abu@gmail.com</td>
+                                <td>TTS</td>
+                                <td>Sent</td>
+                                <td>
+                                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                        <label class="btn btn-secondary active">
+                                            <input type="radio" name="options" id="option1" checked> View
+                                        </label>
+                                        <label class="btn btn-secondary">
+                                            <input type="radio" name="options" id="option2"> Delete
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>21/1/2020</td>
+                                <td>Ali</td>
+                                <td>Ali@gmail.com</td>
+                                <td>Fire</td>
+                                <td>Sent</td>
+                                <td>
+                                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                        <label class="btn btn-secondary active">
+                                            <input type="radio" name="options" id="option1" checked> View
+                                        </label>
+                                        <label class="btn btn-secondary">
+                                            <input type="radio" name="options" id="option2"> Delete
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>21/1/2020</td>
+                                <td>Minah</td>
+                                <td>Minah@gmail.com</td>
+                                <td>Vegetation</td>
+                                <td>Pending</td>
+                                <td>
+                                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                        <label class="btn btn-secondary active">
+                                            <input type="radio" name="options" id="option1" checked> View
+                                        </label>
+                                        <label class="btn btn-secondary">
+                                            <input type="radio" name="options" id="option2"> Delete
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>21/1/2020</td>
+                                <td>Meon</td>
+                                <td>Meon@gmail.com</td>
+                                <td>Nighttime</td>
+                                <td>Pending</td>
+                                <td>
+                                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                        <label class="btn btn-secondary active">
+                                            <input type="radio" name="options" id="option1" checked> View
+                                        </label>
+                                        <label class="btn btn-secondary">
+                                            <input type="radio" name="options" id="option2"> Delete
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>21/1/2020</td>
+                                <td>Abas</td>
+                                <td>Abas@gmail.com</td>
+                                <td>Haze</td>
+                                <td>Sent</td>
+                                <td>
+                                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                        <label class="btn btn-secondary active">
+                                            <input type="radio" name="options" id="option1" checked> View
+                                        </label>
+                                        <label class="btn btn-secondary">
+                                            <input type="radio" name="options" id="option2"> Delete
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>21/1/2020</td>
+                                <td>Along</td>
+                                <td>Along@gmail.com</td>
+                                <td>Land Cover</td>
+                                <td>Sent</td>
+                                <td>
+                                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                        <label class="btn btn-secondary active">
+                                            <input type="radio" name="options" id="option1" checked> View
+                                        </label>
+                                        <label class="btn btn-secondary">
+                                            <input type="radio" name="options" id="option2"> Delete
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>21/1/2020</td>
+                                <td>Achik</td>
+                                <td>Achik@gmail.com</td>
+                                <td>Sea Temperature</td>
+                                <td>Sent</td>
+                                <td>
+                                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                        <label class="btn btn-secondary active">
+                                            <input type="radio" name="options" id="option1" checked> View
+                                        </label>
+                                        <label class="btn btn-secondary">
+                                            <input type="radio" name="options" id="option2"> Delete
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+
+</section>
+
+<script>
+    $(document).ready(function () {
+        $('#example').DataTable({
+            "order": [
+                [3, "desc"]
+            ]
+        });
+    });
+</script>

@@ -86,10 +86,9 @@ canvas.height = 800;
 
          $('#select-data-list').change(function () {
         var selectedCountry = $(this).children("option:selected").val();
-
         if (selectedCountry == "data-vegetation") {
-            redraw();
             gkhead.src = '<%= asset_path( 'data-vegetation.jpg' ) %>'
+            redraw();
             $("#title-header").text("Description : ");
             $("#title").text("MODIS NDVI/EVI");
             $("#des").text("The MODIS vegetation indices (VIs) consists of Normalized Difference Vegetation Index (NDVI)" +
