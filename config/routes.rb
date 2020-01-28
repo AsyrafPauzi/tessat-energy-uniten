@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :admins, only: [:index]
   namespace :admins do
     namespace :manage do
+      get 'sync', to: 'maps#sync_data', as: 'sync_data' #admins_manage_sync_data_path
       resources :maps
       resources :request_maps
     end

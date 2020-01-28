@@ -10,6 +10,7 @@
       <div class="row">
         <div class="col-md-12 my-2">
           <button type="button" class="btn btn-primary">Upload New Data</button>
+          <button type="button" class="btn btn-primary" id="sync_data">Sync Synology</button>
         </div>
         <div class="col-sm-12 table-responsive">
           <table id="example" class="table table-bordered table-striped no-footer dataTable" role="grid"
@@ -18,132 +19,29 @@
               <tr role="row">
                 <th>Request Time</th>
                 <th>Name</th>
-                <th>Email</th>
-                <th>Request Data</th>
-                <th>status</th>
+                <th>Map Synology ID</th>
+                <th>Map Synology Date</th>
                 <th>Action</th>
               </tr>
             </thead>
             <tbody>
+            <% @maps.each do |map|%>
               <tr>
-                <td>21/1/2020</td>
-                <td>Abu</td>
-                <td>Abu@gmail.com</td>
-                <td>TTS</td>
-                <td>Sent</td>
+                <td><%= map.created_at.strftime('%d/%m/%Y')%></td>
+                <td><%= map.file_name%></td>
+                <td><%= map.data_id %></td>
+                <td><%= map.file_date %></td>
                 <td>
                   <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                    <label class="btn btn-secondary active">
-                      <input type="radio" name="options" id="option1" checked> View
-                    </label>
+                    <%= link_to 'View', admins_manage_map_path(map.id), class: 'btn btn-success'%>
+                    
                     <label class="btn btn-secondary">
                       <input type="radio" name="options" id="option2"> Delete
                     </label>
                   </div>
                 </td>
               </tr>
-              <tr>
-                <td>21/1/2020</td>
-                <td>Ali</td>
-                <td>Ali@gmail.com</td>
-                <td>Fire</td>
-                <td>Sent</td>
-                <td>
-                  <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                    <label class="btn btn-secondary active">
-                      <input type="radio" name="options" id="option1" checked> View
-                    </label>
-                    <label class="btn btn-secondary">
-                      <input type="radio" name="options" id="option2"> Delete
-                    </label>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>21/1/2020</td>
-                <td>Minah</td>
-                <td>Minah@gmail.com</td>
-                <td>Vegetation</td>
-                <td>Pending</td>
-                <td>
-                  <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                    <label class="btn btn-secondary active">
-                      <input type="radio" name="options" id="option1" checked> View
-                    </label>
-                    <label class="btn btn-secondary">
-                      <input type="radio" name="options" id="option2"> Delete
-                    </label>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>21/1/2020</td>
-                <td>Meon</td>
-                <td>Meon@gmail.com</td>
-                <td>Nighttime</td>
-                <td>Pending</td>
-                <td>
-                  <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                    <label class="btn btn-secondary active">
-                      <input type="radio" name="options" id="option1" checked> View
-                    </label>
-                    <label class="btn btn-secondary">
-                      <input type="radio" name="options" id="option2"> Delete
-                    </label>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>21/1/2020</td>
-                <td>Abas</td>
-                <td>Abas@gmail.com</td>
-                <td>Haze</td>
-                <td>Sent</td>
-                <td>
-                  <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                    <label class="btn btn-secondary active">
-                      <input type="radio" name="options" id="option1" checked> View
-                    </label>
-                    <label class="btn btn-secondary">
-                      <input type="radio" name="options" id="option2"> Delete
-                    </label>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>21/1/2020</td>
-                <td>Along</td>
-                <td>Along@gmail.com</td>
-                <td>Land Cover</td>
-                <td>Sent</td>
-                <td>
-                  <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                    <label class="btn btn-secondary active">
-                      <input type="radio" name="options" id="option1" checked> View
-                    </label>
-                    <label class="btn btn-secondary">
-                      <input type="radio" name="options" id="option2"> Delete
-                    </label>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>21/1/2020</td>
-                <td>Achik</td>
-                <td>Achik@gmail.com</td>
-                <td>Sea Temperature</td>
-                <td>Sent</td>
-                <td>
-                  <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                    <label class="btn btn-secondary active">
-                      <input type="radio" name="options" id="option1" checked> View
-                    </label>
-                    <label class="btn btn-secondary">
-                      <input type="radio" name="options" id="option2"> Delete
-                    </label>
-                  </div>
-                </td>
-              </tr>
+            <% end %>
             </tbody>
           </table>
         </div>
@@ -162,5 +60,21 @@
         [3, "desc"]
       ]
     });
+    $('#sync_data').click(function(){
+      HoldOn.open(options);
+      var options = {
+          theme:"sk-bounce",
+          message:'Please wait while fetching the data... ',
+          backgroundColor:"#706f6c",
+          textColor:"white"
+      };
+       $.get("<%= admins_manage_sync_data_path %>", function(data, status){
+      }).done(function() {
+        HoldOn.close();
+        window.location.reload()
+      });
+     
+
+    })
   });
 </script>
