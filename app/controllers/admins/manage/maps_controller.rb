@@ -1,11 +1,11 @@
 class Admins::Manage::MapsController < Admins::BaseController
     #before_action :get_shipment, only: [:create, :index, :update]
      def index
-             
+        @maps = TessatMap.all.order(file_date: :desc)
      end
  
      def show
- 
+        @map = TessatMap.find_by_id params[:id]
      end
  
      def new
@@ -39,6 +39,24 @@ class Admins::Manage::MapsController < Admins::BaseController
      end
  
      def destroy
+     end
+
+     def sync_data
+        s3 = Aws::S3::Client.new
+        resp = s3.list_objects(bucket: 'tessat-uniten')
+        resp.contents.each do |object|
+            puts "Saving datafile #{object.key}"
+            key = object.key.gsub!(/\./,",")
+            merge = key.split(',')
+            @map = TessatMap.find_by_data_id merge[2]
+            unless @map.present?
+                puts "Id : #{merge[2]}"
+                puts "File : #{merge[0]}"
+                puts "Date : #{Date.strptime(merge[1],"%Y%m%d")}" 
+                TessatMap.create! data_id: merge[2], file_name: merge[0], file_date: Date.strptime(merge[1],"%Y%m%d"), full_name: key.gsub!(/\,/,".")
+            end
+        end
+        render json: 200
      end
  
      private

@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  data_id: MyText
+  file_name: MyText
+  file_date: 2020-01-28
+
+two:
+  data_id: MyText
+  file_name: MyText
+  file_date: 2020-01-28

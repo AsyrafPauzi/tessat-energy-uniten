@@ -1,0 +1,2 @@
+class TessatMap < ApplicationRecord
+end
