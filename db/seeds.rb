@@ -10,3 +10,8 @@ admin = Admin.find_by_email('admin@energyuniten.com')
 if !admin.present?
     admin = Admin.create!(email: 'admin@energyuniten.com', password: '123qaz', password_confirmation: '123qaz')
 end
+
+user = User.find_by_email('user@energyuniten.com')
+if !user.present?
+    user = User.create!(email: 'user@energyuniten.com', password: '123qaz', password_confirmation: '123qaz')
+end

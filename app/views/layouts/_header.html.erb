@@ -12,10 +12,13 @@
                     <a class="nav-link" href="/map_access">DATA MAP</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">APPLICATION & TRAINING</a>
+                    <a class="nav-link" href="/application_training">APPLICATION & TRAINING</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/about_us">ABOUT US</a>
+                </li>
+                <li class="nav-item">
+                     <%= link_to('SIGN OUT', destroy_user_session_path, method: :delete, class:"nav-link") %>
                 </li>
             </ul>
         </div>

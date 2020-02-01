@@ -12,7 +12,7 @@
                     <a class="nav-link" href="/admins/manage/maps">DATA LIBRARY</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">LOG OUT</a>
+                    <%= link_to('SIGN OUT', destroy_admin_session_path, method: :delete, class:"nav-link") %>
                 </li>
             </ul>
         </div>

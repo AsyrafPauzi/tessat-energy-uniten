@@ -1,5 +1,5 @@
 class Admins::Manage::MapsController < Admins::BaseController
-    #before_action :get_shipment, only: [:create, :index, :update]
+    #before_action :get_map, only: [:create, :index, :update]
      def index
         @maps = TessatMap.all.order(file_date: :desc)
      end
@@ -61,13 +61,13 @@ class Admins::Manage::MapsController < Admins::BaseController
  
      private
  
-     def get_shipment
+     def get_map
  
             # @company = Company.find(current_user.company_id)
         
      end
  
-     def shipment_params
+     def map_params
          params.require(:shipment).permit()
      end
  
